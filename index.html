@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale-1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cổng thông tin nhân viên Pala</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,15 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   
   <link rel="icon" href="/logos/PLClogopalacolour.svg" type="image/svg+xml">
-
-  <script>
-    (() => {
-      const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-      document.documentElement.classList.add(theme);
-    })();
-  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -54,128 +45,254 @@
     }
   </script>
 
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
+
 </head>
 
 <body class="bg-custom-pink-50 dark:bg-custom-slate-900 text-slate-700 dark:text-slate-300 min-h-screen font-sans">
 
-  <header class="bg-white/95 dark:bg-custom-slate-900/95 shadow-sm">
-    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <div>
-        <a href="/staff-portal.html">
-          <img src="/logos/PLC_Logo_FA_Horizontal_COLOUR.png" alt="Pala Language Centre Logo" class="h-11 w-auto" width="150" height="48">
-        </a>
-      </div>
+  <div class="flex h-screen">
+    
+    <nav class="w-20 flex flex-col items-center py-4 bg-white dark:bg-custom-slate-800 shadow-lg z-10">
       
-      <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5 transition-colors">
+      <a href="/staff-portal.html" class="p-2">
+        <img src="/logos/PLClogopalacolour.svg" alt="Pala Logo" class="h-10 w-10" width="40" height="40">
+      </a>
+
+      <div class="flex flex-col items-center space-y-4 mt-8">
+        <a href="/staff-portal.html" title="Trang chủ" class="p-3 bg-custom-pink-100 dark:bg-custom-pink-800/50 text-custom-pink-600 dark:text-custom-pink-200 rounded-lg transition-colors">
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+          </svg>
+        </a>
+        
+        <a href="https://outlook.office.com/" title="Outlook" target="_blank" rel="noopener noreferrer" class="p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+          </svg>
+        </a>
+
+        <a href="https://teams.microsoft.com/" title="Teams" target="_blank" rel="noopener noreferrer" class="p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-4.682 2.72a3 3 0 01-4.682-2.72m-4.682 2.72c.386.083.78.146 1.18.197M12 12.75V15m0 0l-2.219-2.219m2.219 2.219l2.219-2.219M12 12.75l-2.219 2.219M12 12.75l2.219 2.219M12 6.75v4.5M12 6.75L9.781 4.531m2.219 2.219L14.219 4.531M12 6.75L9.781 8.969m2.219-2.219L14.219 8.969" />
+          </svg>
+        </a>
+
+      </div>
+
+      <button id="theme-toggle" type="button" class="mt-auto mb-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5 transition-colors">
         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
         <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.121-3.536a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM3.05 4.536a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zm1.414 11.313a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414zM16 10a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zM1 10a1 1 0 011-1h1a1 1 0 110 2H2a1 1 0 01-1-1z"></path></svg>
+        <span class="sr-only">Toggle theme</span>
       </button>
+
     </nav>
-  </header>
 
-  <main class="container mx-auto px-6 py-12 md:py-16">
+    <main class="flex-1 overflow-y-auto">
+      
+      <div class="container mx-auto px-6 md:px-10 py-12 md:py-16">
 
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-custom-pink-800 dark:text-custom-pink-300">
-        Chào mừng đến với Pala
-      </h1>
-      <p class="mt-4 text-lg font-medium text-slate-600 dark:text-slate-400">
-        Một điểm đến cho tất cả các công cụ và tài nguyên làm việc của bạn.
-      </p>
-    </div>
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-custom-pink-800 dark:text-custom-pink-300">
+            Chào mừng đến với Pala
+          </h1>
+          <p class="mt-4 text-lg font-medium text-slate-600 dark:text-slate-400">
+            Một điểm đến cho tất cả các công cụ và tài nguyên làm việc của bạn.
+          </p>
+        </div>
 
-    <section class="mt-12 md:mt-16">
-      <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-6">
-        Ứng dụng Microsoft 365
-      </h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-        
-        <a href="https://www.office.com/" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">M365 Home</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Tất cả ứng dụng</p>
-        </a>
-        
-        <a href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">Outlook</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Email & Lịch</p>
-        </a>
-        
-        <a href="https://onedrive.live.com/about/en-us/signin/" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">OneDrive</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Lưu trữ tệp</p>
-        </a>
-        
-        <a href="https://www.office.com/launch/word" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">Word</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Tài liệu</p>
-        </a>
-        
-        <a href="https://www.office.com/launch/excel" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">Excel</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Bảng tính</p>
-        </a>
-        
-        <a href="https://www.office.com/launch/powerpoint" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">PowerPoint</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Trình bày</p>
-        </a>
-        
-        <a href="https://teams.microsoft.com/" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">Teams</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Trò chuyện & Họp</p>
-        </a>
-        
-        <a href="https://to-do.office.com/" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">To Do</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Việc cần làm</p>
-        </a>
-        
-        <a href="https://whiteboard.microsoft.com/" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">Whiteboard</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Bảng trắng</p>
-        </a>
+        <section class="mt-12 md:mt-16">
+          <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-6">
+            Ứng dụng Microsoft 365
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+            
+            <a href="https://www.office.com/" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">M365 Home</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Tất cả ứng dụng</p>
+            </a>
+            
+            <a href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">Outlook</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Email & Lịch</p>
+            </a>
+            
+            <a href="https://onedrive.live.com/about/en-us/signin/" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">OneDrive</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Lưu trữ tệp</p>
+            </a>
+            
+            <a href="https://www.office.com/launch/word" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">Word</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Tài liệu</p>
+            </a>
+            
+            <a href="https://www.office.com/launch/excel" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 1.5H3.75m0 0A2.25 2.25 0 011.5 3.75v16.5A2.25 2.25 0 013.75 22.5h16.5A2.25 2.25 0 0122.5 20.25V3.75A2.25 2.25 0 0120.25 1.5H15M9 1.5v3a3.75 3.75 0 01-3.75 3.75H1.5M9 1.5h6M9 7.5h6M9 13.5h6m-6 3h6m-6 3h6m6-3v-3.375c0-.621-.504-1.125-1.125-1.125h-1.5c-.621 0-1.125.504-1.125 1.125V16.5m0 0v3.375c0 .621.504 1.125 1.125 1.125h1.5c.621 0 1.125-.504 1.125-1.125V16.5m0 0h-1.5m-1.5-9l-3 3m0 0l3 3m-3-3h6.75" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">Excel</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Bảng tính</p>
+            </a>
+            
+            <a href="https://www.office.com/launch/powerpoint" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">PowerPoint</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Trình bày</p>
+            </a>
+            
+            <a href="https://teams.microsoft.com/" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-4.682 2.72a3 3 0 01-4.682-2.72m-4.682 2.72c.386.083.78.146 1.18.197M12 12.75V15m0 0l-2.219-2.219m2.219 2.219l2.219-2.219M12 12.75l-2.219 2.219M12 12.75l2.219 2.219M12 6.75v4.5M12 6.75L9.781 4.531m2.219 2.219L14.219 4.531M12 6.75L9.781 8.969m2.219-2.219L14.219 8.969" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">Teams</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Trò chuyện & Họp</p>
+            </a>
+            
+            <a href="https://to-do.office.com/" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">To Do</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Việc cần làm</p>
+            </a>
+            
+            <a href="https://whiteboard.microsoft.com/" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">Whiteboard</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Bảng trắng</p>
+            </a>
+
+          </div>
+        </section>
+
+        <section class="mt-12 md:mt-16">
+          <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-6">
+            Tài nguyên Pala
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+            
+            <a href="https://resources.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">Cổng học liệu</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Tài nguyên giảng dạy</p>
+            </a>
+            
+            <a href="https://careers.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">Tuyển dụng</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Trang cơ hội nghề nghiệp</p>
+            </a>
+            
+            <a href="https://www.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
+               class="block p-5 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div class="p-3 bg-custom-pink-100 dark:bg-custom-slate-700 rounded-lg inline-block mb-3 transition-colors">
+                <svg class="w-6 h-6 text-custom-pink-600 dark:text-custom-pink-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c.24 0 .468-.02.69-.057M12 21c-.24 0-.468-.02-.69-.057m0 0a8.966 8.966 0 01-7.01-4.42M2.25 12c0-1.77.72-3.37 1.9-4.52M12 3a8.966 8.966 0 017.01 4.42M19.8 7.48a8.963 8.963 0 00-1.9-4.52M12 3c.24 0 .468.02.69.057M12 3c-.24 0-.468.02-.69.057m0 0a8.966 8.966 0 00-7.01 4.42M4.2 7.48a8.963 8.963 0 011.9-4.52M12 12.75a3 3 0 100-6 3 3 0 000 6z" />
+                </svg>
+              </div>
+              <span class="text-base font-semibold text-slate-800 dark:text-white">Trang chủ Pala</span>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Website công khai</p>
+            </a>
+
+          </div>
+        </section>
 
       </div>
-    </section>
+    </main>
 
-    <section class="mt-12 md:mt-16">
-      <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-6">
-        Tài nguyên Pala
-      </h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-        
-        <a href="https://resources.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">Cổng học liệu</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Tài nguyên giảng dạy</p>
-        </a>
-        
-        <a href="https://careers.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">Tuyển dụng</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Trang cơ hội nghề nghiệp</p>
-        </a>
-        
-        <a href="https://www.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
-           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-          <span class="text-lg font-semibold text-slate-800 dark:text-white">Trang chủ Pala</span>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Website công khai</p>
-        </a>
+  </div>
 
-      </div>
-    </section>
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const docElement = document.documentElement;
 
-  </main>
+    // Function to set the theme
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        docElement.classList.add('dark');
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        docElement.classList.remove('dark');
+        darkIcon.classList.add('hidden');
+        lightIcon.classList.remove('hidden');
+        localStorage.setItem('theme', 'light');
+      }
+    }
 
-  <script src="/main.js" defer></script>
+    // Initialize theme on load (handles showing the correct icon)
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setTheme(currentTheme);
+
+    // Add click listener to the button
+    themeToggleBtn.addEventListener('click', () => {
+      const newTheme = docElement.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+  </script>
 </body>
 </html>
