@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale-1.0">
+  <title>Cổng thông tin nhân viên Pala</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="/logos/PLClogopalacolour.svg" type="image/svg+xml">
+
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.classList.add(theme);
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'custom-pink': {
+              50: '#fdf2f8',
+              100: '#fce7f3',
+              200: '#fbcfe8',
+              300: '#f9a8d4',
+              400: '#f472b6',
+              500: '#ec4899',
+              600: '#db2777',
+              700: '#be185d',
+              800: '#9d174d',
+              900: '#831843',
+            },
+            'custom-slate': {
+              800: '#1e293b',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body class="bg-custom-pink-50 dark:bg-custom-slate-900 text-slate-700 dark:text-slate-300 min-h-screen font-sans">
+
+  <header class="bg-white/95 dark:bg-custom-slate-900/95 shadow-sm">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <div>
+        <a href="/staff-portal.html">
+          <img src="/logos/PLC_Logo_FA_Horizontal_COLOUR.png" alt="Pala Language Centre Logo" class="h-11 w-auto" width="150" height="48">
+        </a>
+      </div>
+      
+      <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5 transition-colors">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.121-3.536a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM3.05 4.536a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zm1.414 11.313a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414zM16 10a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zM1 10a1 1 0 011-1h1a1 1 0 110 2H2a1 1 0 01-1-1z"></path></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-6 py-12 md:py-16">
+
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-custom-pink-800 dark:text-custom-pink-300">
+        Chào mừng đến với Pala
+      </h1>
+      <p class="mt-4 text-lg font-medium text-slate-600 dark:text-slate-400">
+        Một điểm đến cho tất cả các công cụ và tài nguyên làm việc của bạn.
+      </p>
+    </div>
+
+    <section class="mt-12 md:mt-16">
+      <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-6">
+        Ứng dụng Microsoft 365
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+        
+        <a href="https://www.office.com/" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">M365 Home</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Tất cả ứng dụng</p>
+        </a>
+        
+        <a href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">Outlook</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Email & Lịch</p>
+        </a>
+        
+        <a href="https://onedrive.live.com/about/en-us/signin/" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">OneDrive</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Lưu trữ tệp</p>
+        </a>
+        
+        <a href="https://www.office.com/launch/word" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">Word</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Tài liệu</p>
+        </a>
+        
+        <a href="https://www.office.com/launch/excel" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">Excel</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Bảng tính</p>
+        </a>
+        
+        <a href="https://www.office.com/launch/powerpoint" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">PowerPoint</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Trình bày</p>
+        </a>
+        
+        <a href="https://teams.microsoft.com/" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">Teams</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Trò chuyện & Họp</p>
+        </a>
+        
+        <a href="https://to-do.office.com/" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">To Do</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Việc cần làm</p>
+        </a>
+        
+        <a href="https://whiteboard.microsoft.com/" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">Whiteboard</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Bảng trắng</p>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="mt-12 md:mt-16">
+      <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-6">
+        Tài nguyên Pala
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+        
+        <a href="https://resources.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">Cổng học liệu</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Tài nguyên giảng dạy</p>
+        </a>
+        
+        <a href="https://careers.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">Tuyển dụng</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Trang cơ hội nghề nghiệp</p>
+        </a>
+        
+        <a href="https://www.ngoaingupala.edu.vn" target="_blank" rel="noopener noreferrer" 
+           class="block p-6 bg-white dark:bg-custom-slate-800 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+          <span class="text-lg font-semibold text-slate-800 dark:text-white">Trang chủ Pala</span>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Website công khai</p>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/main.js" defer></script>
+</body>
+</html>
